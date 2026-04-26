@@ -1,20 +1,19 @@
 #include "plugin.h"
 
-#include "WindowUtils.h"
+#include "WindowsUtils.h"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
 #include <godot_cpp/classes/engine.hpp>
 
-
 void initialize_module(godot::ModuleInitializationLevel p_level) {
 	if (p_level != godot::MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
 
-	GDREGISTER_CLASS(WindowUtils);
-	godot::Engine::get_singleton()->register_singleton(WindowUtils::get_class_static(), WindowUtils::get_singleton());
+	GDREGISTER_CLASS(WindowsUtils);
+	godot::Engine::get_singleton()->register_singleton(WindowsUtils::get_class_static(), WindowsUtils::get_singleton());
 }
 
 void uninitialize_module(godot::ModuleInitializationLevel p_level) {
@@ -22,7 +21,7 @@ void uninitialize_module(godot::ModuleInitializationLevel p_level) {
 		return;
 	}
 
-	godot::Engine::get_singleton()->unregister_singleton(WindowUtils::get_class_static());
+	godot::Engine::get_singleton()->unregister_singleton(WindowsUtils::get_class_static());
 }
 
 

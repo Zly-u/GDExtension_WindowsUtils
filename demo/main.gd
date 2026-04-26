@@ -1,15 +1,24 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_window().handle_input_locally = false;
-	get_window().mouse_passthrough = true;
+	WindowsUtils.on_started_polling_keys.connect(testStart);
+	WindowsUtils.winAPI_any_key_pressed.connect(testPress);
+	WindowsUtils.on_stopped_polling_keys.connect(testStop);
 	
-	print(WindowUtils.SetPassThrough(true));
+	WindowsUtils.StartKeyPolling();
 	
-	pass # Replace with function body.
+	
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func testStart():
+	print("start")
+
+func testPress():
+	print("pressed")
+
+func testStop():
+	print("stop")
+
 func _process(delta: float) -> void:
 	pass
