@@ -28,7 +28,7 @@ class WindowsUtils : public godot::Object
 		}
 
 		static void delete_singleton(){
-			memdelete(instance);
+			godot::memdelete(instance);
 			instance = nullptr;
 		};
 
@@ -44,6 +44,8 @@ class WindowsUtils : public godot::Object
 		void StartKeyPolling();
 		void StopKeyPolling();
 
+	protected:
+		static void _bind_methods();
 
 	private:
 		void Worker_KeyPoller(const std::stop_token& token);
@@ -60,10 +62,7 @@ class WindowsUtils : public godot::Object
 		std::unique_ptr<std::jthread> Worker;
 
 
-protected:
-	    static void _bind_methods();
-
-
 	private:
 		inline static WindowsUtils* instance = nullptr;
+
 };

@@ -35,8 +35,7 @@ bool WindowsUtils::SetMousePassThrough(const bool isEnabled) {
 	}
 
 	// This is the ONLY way i could figure how to make the window to REFRESH its state
-	// to not bug out when we flip-flop the passthrough logic above.
-	ds->window_set_flag(godot::DisplayServer::WINDOW_FLAG_NO_FOCUS, !isEnabled, k_main_win);
+	// ds->window_set_flag(godot::DisplayServer::WINDOW_FLAG_NO_FOCUS, isEnabled, k_main_win);
 
 	LONG_PTR new_ex_style = ex_style;
 	if (isEnabled) {

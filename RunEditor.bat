@@ -1,0 +1,1 @@
+godot.windows.opt.tools.64.exe %*

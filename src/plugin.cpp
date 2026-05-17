@@ -22,6 +22,7 @@ void uninitialize_module(godot::ModuleInitializationLevel p_level) {
 	}
 
 	godot::Engine::get_singleton()->unregister_singleton(WindowsUtils::get_class_static());
+	WindowsUtils::delete_singleton();
 }
 
 

@@ -8,6 +8,7 @@ func _ready() -> void:
 	
 	WindowsUtils.StartKeyPolling();
 	
+	WindowsUtils.SetMousePassThrough(true);
 	
 	pass
 

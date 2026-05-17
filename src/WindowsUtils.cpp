@@ -12,7 +12,6 @@ void WindowsUtils::_bind_methods() {
 	);
 
 
-
 	godot::ClassDB::bind_method(
 		godot::D_METHOD("StartKeyPolling"),
 		&WindowsUtils::StartKeyPolling
@@ -42,13 +41,13 @@ void WindowsUtils::_bind_methods() {
 	);
 }
 
+
 WindowsUtils::WindowsUtils() {
-    // Init shenanigans.
+	godot::UtilityFunctions::print("Initialized WindowsUtils.");
 }
 
 WindowsUtils::~WindowsUtils() {
-    // Add your cleanup here.
-	StopKeyPolling();
+	godot::UtilityFunctions::print("Deinitialized WindowsUtils.");
 }
 
 
